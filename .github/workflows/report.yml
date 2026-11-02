@@ -17,4 +17,6 @@ jobs:
                   python-version: "3.x"
 
             - name: Validate reports
-              run: ./.github/scripts/validator_linux
+          run: |
+            chmod +x ./.github/scripts/validator_linux
+            ./.github/scripts/validator_linux
