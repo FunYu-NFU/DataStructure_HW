@@ -1,22 +1,22 @@
 name: Validate Reports on Push
 
 on:
-    push:
-    pull_request:
+  push:
+  pull_request:
 
 jobs:
-    validate-reports:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
+  validate-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-            - name: Set up Python
-              uses: actions/setup-python@v4
-              with:
-                  python-version: "3.x"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-            - name: Validate reports
-          run: |
-            chmod +x ./.github/scripts/validator_linux
-            ./.github/scripts/validator_linux
+      - name: Validate reports
+        run: |
+          chmod +x ./.github/scripts/validator_linux
+          ./.github/scripts/validator_linux
